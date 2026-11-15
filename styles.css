@@ -34,12 +34,65 @@ h1, h2 { color: var(--green); }
 .gallery figure { margin: 0; background: #fff; border-radius: 12px; padding: 12px; }
 .gallery img { width: 100%; height: auto; }
 figcaption { font-size: 0.95rem; color: #4b5a43; }
-.plant { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: center; background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 18px; }
-.plant img { width: 100%; height: auto; max-height: 300px; object-fit: contain; }
-.plant h3 { margin: 0 0 6px; color: var(--violet); }
 .tip { border-left: 6px solid var(--green-light); background: #fff; padding: 12px 16px; border-radius: 6px; margin-top: 24px; }
 footer { background: var(--text); color: #e8eadf; text-align: center; padding: 16px; font-size: 0.9rem; }
 footer a { color: var(--green-light); }
+
+
+/* ---- shared blocks ---- */
+.center { text-align: center; }
+.intro { border-radius: 12px; padding: 18px 20px; margin-bottom: 22px; background: #fff; }
+.intro h1 { margin-top: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { background: #fff; border: 1px solid #cfd8c8; border-radius: 20px; padding: 4px 12px; text-decoration: none; color: var(--green); font-size: .95rem; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 8px; }
+.stats div { background: #fff; border-radius: 12px; padding: 14px; text-align: center; }
+.stats b { display: block; font-size: 2rem; color: var(--violet); }
+.card img { display: block; height: 120px; width: auto; margin: 0 auto 8px; }
+.seasons, .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.seasons div, .rules div { background: #fff; border-radius: 12px; padding: 14px 16px; border-left: 6px solid var(--green-light); }
+.seasons h3, .rules h3 { margin: 0 0 4px; color: var(--green); }
+.seasons p, .rules p { margin: 0; }
+
+/* ---- plant cards ---- */
+.plant { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: start; background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; scroll-margin-top: 16px; }
+.plant img { width: 100%; height: auto; max-height: 340px; object-fit: contain; }
+.plant h2 { margin: 0; color: var(--violet); }
+.plant h3 { margin: 14px 0 4px; color: var(--green); font-size: 1.05rem; }
+.plant ul { margin: 0; padding-left: 20px; }
+.lat { margin: 0 0 10px; font-style: italic; color: #5b6852; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin: 0 0 12px; }
+.facts div { background: var(--bg); border-radius: 8px; padding: 6px 10px; }
+.facts dt { font-size: .8rem; color: #5b6852; }
+.facts dd { margin: 0; font-weight: 600; }
+.care { background: var(--tint-shrubs); border-radius: 8px; padding: 10px 12px; }
+
+/* ---- calendar ---- */
+.table-wrap { overflow-x: auto; background: #fff; border-radius: 12px; padding: 10px; }
+.cal { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .95rem; }
+.cal th, .cal td { border: 1px solid #e3e6dc; padding: 6px; text-align: center; }
+.cal th[scope=row] { text-align: left; white-space: nowrap; }
+.cal th[scope=row] a { color: var(--text); text-decoration: none; }
+.cal td.on.flowers, .sw.flowers { background: var(--violet); }
+.cal td.on.shrubs, .sw.shrubs { background: var(--green-light); }
+.cal td.on.trees, .sw.trees { background: var(--green); }
+.legend { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sw { display: inline-block; width: 18px; height: 18px; border-radius: 4px; margin-left: 10px; }
+
+/* ---- visit ---- */
+.route { background: #fff; border-radius: 12px; padding: 16px 16px 16px 40px; }
+.route li { margin-bottom: 8px; }
+.list { background: #fff; border-radius: 12px; padding: 16px 16px 16px 36px; }
+footer p { margin: 4px 0; }
+
+/* ---- phones ---- */
 @media (max-width: 760px) {
   .hero, .sections, .gallery, .plant { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .plant img { max-height: 240px; }
+  .bar { justify-content: center; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+  nav a { padding: 6px 10px; font-size: .95rem; }
+  h1 { font-size: 1.6rem; }
+  .hero picture { order: -1; }
 }
